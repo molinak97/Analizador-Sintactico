@@ -77,12 +77,13 @@ namespace AnalizadorLexico
             int fila = 0;
             int accion = 0;
             int regla = 0;
+            int i = 0;
             int reduccion = 0;
             bool result = false;
             Token[] tokens = tokensList.ToArray();
 
             syntacticStack.Push(0);
-            for (int i = 0; i < tokens.Length; i++)
+            while(i < tokens.Length)
             {
                 columna = (int)tokens[i].TipoToken;
                 fila = syntacticStack.Peek();
@@ -92,14 +93,16 @@ namespace AnalizadorLexico
                 {
                     syntacticStack.Push(columna);
                     syntacticStack.Push(accion);
+                    i++;
                 }
                 else if (accion == 0)
                 {
-                    result = false;
+                    return false;
                 }
                 else if (accion == -1)
                 {
                     result = true;
+                    i++;
                 }
                 else
                 {
@@ -113,8 +116,7 @@ namespace AnalizadorLexico
                     fila = syntacticStack.Peek();
                     columna = reglasId[regla, 0];
                     syntacticStack.Push(columna);
-                    syntacticStack.Push(table[fila, columna]);
-                    --i;
+                    syntacticStack.Push(table[fila, columna]);                  
                 }
             }
             return result;
