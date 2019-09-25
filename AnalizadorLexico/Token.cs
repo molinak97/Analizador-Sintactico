@@ -50,6 +50,13 @@ namespace AnalizadorLexico
         {
             return this.tipoToken.GetHashCode().ToString();
         }
+        public Tipo TipoToken
+        {
+            get
+            {
+                return this.tipoToken;
+            }
+        }
         public String GetTipo()
         {
             switch (tipoToken)

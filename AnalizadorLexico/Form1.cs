@@ -12,13 +12,19 @@ namespace AnalizadorLexico
 {
     public partial class Form1 : Form
     {
+        AnalizadorLexico analizador;
+        LinkedList<Token> tokens;
+        AnalizadorSintactico analizadorSintactico;
         public Form1()
         {
+            analizadorSintactico = new AnalizadorSintactico();
+            analizador = new AnalizadorLexico();
             InitializeComponent();
         }
 
         private void ButtonSeparar_Click(object sender, EventArgs e)
         {
+
             DetalladoData.Rows.Clear();
             String entrada = TextoOrigen.Text;
             AnalizadorLexico lex = new AnalizadorLexico();
@@ -29,10 +35,12 @@ namespace AnalizadorLexico
             }
             lex.imprimirListaToken(ltokens);
             TextoCopia.Text = TextoOrigen.Text;
-        }
-        private void ReadText()
-        {
+            if (TextoOrigen.Text != "")
+            {
+                MessageBox.Show("Compila = " + analizadorSintactico.analyzer(ltokens).ToString());
+            }
 
-        }
+            }
+
     }
 }
