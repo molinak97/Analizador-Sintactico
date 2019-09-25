@@ -30,5 +30,9 @@ namespace AnalizadorLexico
             lex.imprimirListaToken(ltokens);
             TextoCopia.Text = TextoOrigen.Text;
         }
+        private void ReadText()
+        {
+
+        }
     }
 }
