@@ -37,10 +37,16 @@ namespace AnalizadorLexico
             TextoCopia.Text = TextoOrigen.Text;
             if (TextoOrigen.Text != "")
             {
-                MessageBox.Show("Compila = " + analizadorSintactico.analyzer(ltokens).ToString());
+                MessageBox.Show(analizadorSintactico.analyzer(ltokens).ToString());
             }
 
             }
 
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            DetalladoData.Rows.Clear();
+            TextoOrigen.Clear();
+            TextoCopia.Clear();
+        }
     }
 }

@@ -39,7 +39,6 @@ namespace AnalizadorLexico
                 }
             }
         }
-
         private void loadReglas()
         {
             string pattern = " ";
@@ -54,7 +53,6 @@ namespace AnalizadorLexico
                 }
             }
         }
-
         private void loadReglasId()
         {
             string pattern = " ";
@@ -69,12 +67,10 @@ namespace AnalizadorLexico
                 }
             }
         }
-
         public int getReglaReduccion(int numero)
         {
             return (numero * -1) - 1;
         }
-
         public bool analyzer(LinkedList<Token> tokensList)
         {
             int columna = 0;
@@ -116,15 +112,12 @@ namespace AnalizadorLexico
                     }
                     fila = syntacticStack.Peek();
                     columna = reglasId[regla, 0];
-
                     syntacticStack.Push(columna);
                     syntacticStack.Push(table[fila, columna]);
                     --i;
                 }
             }
-
             return result;
         }
-
     }
 }

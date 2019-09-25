@@ -35,6 +35,7 @@
             this.ButtonSeparar = new System.Windows.Forms.Button();
             this.TextoCopia = new System.Windows.Forms.TextBox();
             this.TextoOrigen = new System.Windows.Forms.TextBox();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DetalladoData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,9 +46,9 @@
             this.Lexema,
             this.Token,
             this.ID});
-            this.DetalladoData.Location = new System.Drawing.Point(223, 203);
+            this.DetalladoData.Location = new System.Drawing.Point(229, 91);
             this.DetalladoData.Name = "DetalladoData";
-            this.DetalladoData.Size = new System.Drawing.Size(343, 159);
+            this.DetalladoData.Size = new System.Drawing.Size(371, 271);
             this.DetalladoData.TabIndex = 7;
             // 
             // Lexema
@@ -68,20 +69,20 @@
             // ButtonSeparar
             // 
             this.ButtonSeparar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSeparar.Location = new System.Drawing.Point(349, 126);
+            this.ButtonSeparar.Location = new System.Drawing.Point(229, 35);
             this.ButtonSeparar.Name = "ButtonSeparar";
             this.ButtonSeparar.Size = new System.Drawing.Size(109, 50);
             this.ButtonSeparar.TabIndex = 6;
-            this.ButtonSeparar.Text = "Fragmentar";
+            this.ButtonSeparar.Text = "Analizar";
             this.ButtonSeparar.UseVisualStyleBackColor = true;
             this.ButtonSeparar.Click += new System.EventHandler(this.ButtonSeparar_Click);
             // 
             // TextoCopia
             // 
-            this.TextoCopia.Location = new System.Drawing.Point(496, 35);
+            this.TextoCopia.Location = new System.Drawing.Point(622, 35);
             this.TextoCopia.Multiline = true;
             this.TextoCopia.Name = "TextoCopia";
-            this.TextoCopia.Size = new System.Drawing.Size(258, 141);
+            this.TextoCopia.Size = new System.Drawing.Size(157, 327);
             this.TextoCopia.TabIndex = 5;
             // 
             // TextoOrigen
@@ -89,14 +90,26 @@
             this.TextoOrigen.Location = new System.Drawing.Point(46, 35);
             this.TextoOrigen.Multiline = true;
             this.TextoOrigen.Name = "TextoOrigen";
-            this.TextoOrigen.Size = new System.Drawing.Size(258, 141);
+            this.TextoOrigen.Size = new System.Drawing.Size(158, 327);
             this.TextoOrigen.TabIndex = 4;
+            // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpiar.Location = new System.Drawing.Point(491, 35);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(109, 50);
+            this.buttonLimpiar.TabIndex = 8;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 378);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.DetalladoData);
             this.Controls.Add(this.ButtonSeparar);
             this.Controls.Add(this.TextoCopia);
@@ -118,6 +131,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Lexema;
         private System.Windows.Forms.DataGridViewTextBoxColumn Token;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }
 
